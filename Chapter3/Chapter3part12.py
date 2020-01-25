@@ -26,7 +26,7 @@ def extended_gcd(a,b):
         r = [r[1], r[0] - q *r[1]]
     return((s[0],t[0]))
 
-#print(evesfunction(100156265,1024384027))     #this is commented out as it takes a really long time. Maybe there is a smarter less brute force way of doing it
+#print(evesfunction(100156265,1024384027))     #this is commented out as it takes a really long time on my laptop. Maybe there is a smarter less brute force way of doing it
 
 
 
