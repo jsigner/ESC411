@@ -1,0 +1,7 @@
+In maths you could make sense of it as a set of 3 equations with two unknowns that has a nuique solution x=0,y=0.
+In python it only makes sense if x and y are previously defined objects for which  "+" and "-" operators make sense.
+I that case line1 redefines x as the original x+y. Then line 2 redefines y as x-current value of y. The 3rd line the redefines x again as the current x value - y.
+For example if x=1 and y=2:
+line 1 redefines x as x=1+2=3
+line 2 redefines y as y=3-2=1
+line 3 redefines x as x=3-1=2
