@@ -29,8 +29,9 @@ pylab.show()
 pylab.plot(v2[0],v2[1])
 pylab.show()
 
-#Here we see that the symplectic euler method produces the characteristic closed loop we expect from loktera-volta equations.
+#Here we see that the symplectic euler method produces the characteristic closed loop we expect from the loktera-volta equations.
 #While the explicit euler method approximates it well initialy it blows up as t increase and becomes wildly inaccurate.
+#Multiple small errors add up leading to the solution breaking its charecteristic physical properties
 #This is due to the fact that the symplectic euler method preserves H due as can be seen below.
 
 def findH(x,y,A,B,C,D):
