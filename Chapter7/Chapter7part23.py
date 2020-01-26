@@ -11,7 +11,7 @@ def diff2(u):
 def RHS(u,dx):
     N=len(u)
     d2=diff2(u)
-    r=u
+    r=np.array([0.0 for n in range(N)])
     for n in range(0,N):
         r[n]=u[n]*(1-u[n])+d2[n]/dx**2
     return(r)
@@ -19,13 +19,12 @@ def RHS(u,dx):
 
 def numsolFK(u0,dx,dt,N):
     n=len(u0)
-    u=[np.array([0]*n)]*N
+    u=[np.array([0.0]*n) for i in range(N)]
     u[0]=u0
-    u=np.array(u)
     for t in range(1,N):
-        u[t]=u[t-1]+dt*RHS(u[t]+(dt/2)*RHS(u[t],dx),dx)
-        print(dt*RHS(u[t] + (dt / 2) * RHS(u[t], dx), dx))
+        u[t]=u[t-1]+dt*RHS(u[t-1]+(dt/2)*RHS(u[t-1],dx),dx)
+        #print(dt*RHS(u[t] + (dt / 2) * RHS(u[t], dx), dx))
     return(u)
 
 
-print(numsolFK(np.array([0,0,0,2,1,0,0]),0.1,0.1,100))
+print(numsolFK(np.array([0,0,0,2.5,1,0,0]),0.1,0.1,100))
